@@ -3,16 +3,21 @@ body{
   color: #FFFFFF;
   font-family: 'Roboto', sans-serif;
 }
+ul {
+  list-style-type: none;
+ 
+}
 
+.nav{
+  font-size:30px;
+}
 .flex-container{
   display: flex;
   flex-direction: row;
+  justify-content: space-evenly;
 }
 
-#container{
-  background-color: blue;
 
-}
 
 .title{
   font-family: 'Sigmar';

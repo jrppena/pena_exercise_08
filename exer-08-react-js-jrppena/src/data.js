@@ -1,21 +1,36 @@
 import React from "react";
 
 
-function NavigationList(props){
+function ReusableNav(props){
     let navigation = props.data;
+    let icon  = props.icon;
+    let additional = props.additional;
 
-    return(
-        <div>
+    if(additional== null){
+        return(
             <div>
-                <div> <i class="fa fa-home"></i> - {navigation[0].title} </div>
-                <div> <i class="material-icons">explore</i>- {navigation[1].title} </div>
-                <div> <i class="fa fa-envelope message-icon"></i> - {navigation[2].title} </div>
-                <div> <i class="fa fa-bookmark-o"></i> - {navigation[3].title} </div>
-                <div> <i class='fas fa-address-book'></i> - {navigation[4].title} </div>
+                <ul>
+                    <li className="nav"> <i class={icon}></i> - {navigation} </li>
+                </ul>
             </div>
-        </div>
-    )
+        )
+    }else{
+        return(
+            <div>
+                <ul>
+                    <li className="nav"> <i class={icon}>{additional}</i> - {navigation} </li>
+                </ul>
+            </div>
+        )
+    }
 }
 
+function ReusablePost(props){
 
-export default NavigationList;
+}
+
+function ReusableTrends(props){
+
+}
+
+export default ReusableNav;
