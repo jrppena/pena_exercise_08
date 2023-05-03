@@ -1,25 +1,84 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from 'react';
+import NavigationList from "./data";
+import './assets/styles/stylesheet.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+function App(){
+
+    const Navigations = [
+      {  title: "Home" },
+      {  title: "Explore" },
+      {  title: "Messages" },
+      {  title: "Bookmarks" },
+      {  title: "Profile" },
+    ]
+    const [CMSCSubjects, setCMSCSubjects] = useState([
+        { code: "CMSC100", description: "Web Programming", id: 1 },
+        { code: "CMSC150", description: "Scientific Computation", id: 2 },
+        { code: "CMSC22", description: "Object-oriented Programming", id: 3 },
+    ]);
+
+
+    const [CHEMSubjects, setCHEMSubjects] = useState([
+        { code: "CMSC100", description: "Web Programming", id: 1 },
+        { code: "CMSC150", description: "Scientific Computation", id: 2 },
+        { code: "CMSC22", description: "Object-oriented Programming", id: 3 },
+    ]);
+
+
+
+
+    function eventHandler(){
+        var courseCode = document.getElementById("courseCode").value;
+        var courseDesc = document.getElementById("courseDesc").value;
+        var courseId = document.getElementById("courseId").value;
+        var CScourseCategory = document.getElementById('CScourseCategory');
+        var CHcourseCategory = document.getElementById('CHcourseCategory');
+
+
+        var newSubjects = {
+            "code": courseCode,
+            "description": courseDesc,
+            "id": courseId,
+        }
+        if(CScourseCategory.checked){
+            // console.log(CScourseCategory.value);
+            setCMSCSubjects([...CMSCSubjects, newSubjects]);
+        }else if(CHcourseCategory.checked){
+            // console.log(CHcourseCategory.value);
+            setCHEMSubjects([...CHEMSubjects, newSubjects]);
+        }
+
+
+       
+    }
+
+
+    return(
+        <div >
+            <h1 className="title">POST IT</h1>
+            {/* forms */}
+           
+            {/* forms */}
+            <div className='flex-container'>
+              <div className='flex-item'>
+                <div id="container">
+                  <NavigationList className="navigation" data = {Navigations} />
+                </div>
+              </div>
+              <div className='flex-item'>
+                <NavigationList className="navigation" data = {Navigations} />
+
+              </div>
+              <div className='flex-item'>
+                
+                <NavigationList className="navigation" data = {Navigations} />
+              </div>
+            </div>
+           
+        </div>
+    );
 }
+
 
 export default App;
