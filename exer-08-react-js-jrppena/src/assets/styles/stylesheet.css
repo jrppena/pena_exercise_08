@@ -1,75 +1,69 @@
-body{
-  background-color: #192841;
-  color: #FFFFFF;
-  font-family: 'Roboto', sans-serif;
+.title{ /* for the title post it*/
+  background-color: blanchedalmond;
 }
-ul {
+
+#postID{ /* this is for the margin of the post it*/
+  margin-left: 100px;
+}
+
+ul { /* no bullets for the list*/
   list-style-type: none;
  
 }
+#sections{ /* this is for the div flex-container below title*/
 
-.nav{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#postSomething{ /* this is to have a larger input field*/
+  width :350px;
+}
+
+.post{ /* image size*/
+  height: 50px;
+  width: 50px;
+}
+
+.nav{ /*font size of the icons*/
   font-size:30px;
 }
-.flex-container{
+
+#posts{ /*this is for the posts spacing*/
+  border: solid;
+  border-width: 1px;
+  border-color: grey;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
-}
-
-
-
-.title{
-  font-family: 'Sigmar';
-  background-color: #ffffff3b;
-  text-align: center;
-  padding: 10px;
-  border-radius: 10px;
-}
-
-
-.wrapper{ /* Reference: https://css-tricks.com/best-way-implement-wrapper-css/ */
-  margin-right: auto; /* 1 */
-  margin-left:  auto; /* 1 */
-  max-width: 960px; /* 2 */
-  padding-right: 10px; /* 3 */
-  padding-left:  10px; /* 3 */
-}
-
-
-.form{
-  background-color: #ffffff3b;
+  align-items: center;
   padding: 20px;
-  border-radius: 10px;
 }
 
-
-.form label{
-  width: 30%;
-}
-
-
-.form input{
-  margin: 10px 0;
-}
-
-
-.form input[type="text"]{
-  border: 0;
-  padding: 10px;
-  border-radius: 5px;
-}
-
-
-.form button{
+.form button{ 
   margin-top: 10px;
   border: 0;
   border-radius: 5px;
   padding: 10px;
+  background-color: green;
   cursor: pointer;
 }
 
-
-.form button:hover{
+.form button:hover{ 
   background-color: #8b8b8b;
+}
+
+
+.virals{ /*this is for the trends section*/
+  background-color: blanchedalmond;
+  padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
+  margin: 10px;
+}
+
+#nameDesc{ /* this is for the spacing for the posts name and description*/
+  margin-left: 10px;
+  margin-bottom: 20px;
 }

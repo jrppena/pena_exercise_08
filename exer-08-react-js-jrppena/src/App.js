@@ -1,44 +1,15 @@
-import { useState } from 'react';
-import ReusableNav from "./data";
+import {ReusableNav, ReusablePost, ReusableTrends}  from "./logic";
+import {Navigations,Posts,Trends} from "./data";
 import './assets/styles/stylesheet.css';
 
-
 function App(){
-
-    const Navigations = [
-      {  icons: "fa fa-home", additional: null, title: "Home" },
-      {  icons: "material-icons", additional: "explore", title: "Explore" },
-      {  icons: "fa fa-envelope message-icon", additional: null, title: "Messages" },
-      {  icons: "fa fa-bookmark-o", additional: null, title: "Bookmarks" },
-      {  icons: "fas fa-address-book", additional: null, title: "Profile" },
-    ]
-    
-    const Posts = [
-      {
-        image: "", charName: "Mickey Mouse", description: "hot dog hot dog hot diggity dog"
-      },
-      {
-        image: "", charName: "Daisy Duck", description: "Have you seen Donald?"
-      },
-      {
-        image: "", charName: "Donald Duck", description: "Oh boy, oh boy, oh boy"
-      },
-      {
-        image: "", charName: "Pluto the Dog", description: "Arf arf!"
-      }
-    ]
-
-    const Trends = [
-      {topic: "#CMSC100", numOfPosts: "100K Posts"},
-      {topic: "#ReactJS", numOfPosts: "25K Posts"},
-      {topic: "Functional Components", numOfPosts: "10K Posts"},
-      {topic: "#JavaScript", numOfPosts: "5K Posts"},
-    ]
-
+   
     return(
-        <div >
-            <h1 className="title">POST IT</h1>
-            <div className='flex-container'>
+        <div>
+            <div className="title">
+              <h1 id="postID" >Post it!</h1>  
+            </div>
+            <div className='flex-container' id = "sections">
               <div className='flex-item'>
                 <div id="container">
                   <ReusableNav className="navigation" icon = {Navigations[0].icons} additional = {Navigations[0].additional} data = {Navigations[0].title}/>
@@ -50,18 +21,21 @@ function App(){
               </div>
               <div className='flex-item'>
                 <div className="form">
-                  <label htmlFor="courseCode"></label>
-                  <input type="text" placeholder="What's happening?" id="courseCode"/> <br />
+                  <label htmlFor="postSomething"></label>
+                  <input type="text" placeholder="What's happening?" id="postSomething"/>
                   <br />
-                  <button>POST!</button>
+                  <button>POST!</button><br /><br />
+                  <ReusablePost className = "posts" image = {Posts[0].image} charName = {Posts[0].charName} desc = {Posts[0].description} />
+                  <ReusablePost className = "posts" image = {Posts[1].image} charName = {Posts[1].charName} desc = {Posts[1].description} />
+                  <ReusablePost className = "posts" image = {Posts[2].image} charName = {Posts[2].charName} desc = {Posts[2].description} />
+                  <ReusablePost className = "posts" image = {Posts[3].image} charName = {Posts[3].charName} desc = {Posts[3].description} />
                 </div>
               </div>
-              <div className='flex-item'>
-                <div className="form">
-                  <label htmlFor="courseCode">Course Code: </label>
-                  <input type="text" placeholder="Course Code" id="courseCode"/> <br />
-                  <br />
-                </div>
+              <div className='flex-item' >
+                  <ReusableTrends className = "trends" topic = {Trends[0].topic} numOfPosts = {Trends[0].numOfPosts}/>
+                  <ReusableTrends className = "trends" topic = {Trends[1].topic} numOfPosts = {Trends[1].numOfPosts}/>
+                  <ReusableTrends className = "trends" topic = {Trends[2].topic} numOfPosts = {Trends[2].numOfPosts}/>
+                  <ReusableTrends className = "trends" topic = {Trends[3].topic} numOfPosts = {Trends[3].numOfPosts}/>
               </div>
             </div>
         </div>
